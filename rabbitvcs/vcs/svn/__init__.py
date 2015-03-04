@@ -1237,13 +1237,13 @@ class SVN:
         @param  recurse: Whether or not to run a recursive checkout.
 
         """
-        if os.path.exists(dest_path):
-            if os.path.isdir(dest_path):
-                shutil.rmtree(dest_path)
-            else:
-                os.remove(dest_path)
+        #if os.path.exists(dest_path):
+        #    if os.path.isdir(dest_path):
+        #        shutil.rmtree(dest_path)
+        #    else:
+        #        os.remove(dest_path)
 
-
+	revision=Revision("head")
 
         return self.client.export(src_url_or_path, dest_path, force,
             revision.primitive(), native_eol, ignore_externals, recurse)
